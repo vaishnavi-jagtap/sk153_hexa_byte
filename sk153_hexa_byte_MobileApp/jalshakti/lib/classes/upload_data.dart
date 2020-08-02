@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'dart:io';
 
@@ -27,14 +25,12 @@ class UploadData {
 
   Future<bool> sendImageDataToServer(imagePath, url) async {
     bool flag = true;
-    //create multipart request for POST or PATCH method
+
     var request = http.MultipartRequest("POST", Uri.parse(SERVER_URL + url));
-    //add text fields
-    //request.fields["image"] = "image.jpg";
-    //create multipart using filepath, string or bytes
+
     var image =
         await http.MultipartFile.fromPath("image-file", File(imagePath).path);
-    //add multipart to request
+
     request.files.add(image);
     http.StreamedResponse response = await request.send().catchError((error) {
       flag = false;

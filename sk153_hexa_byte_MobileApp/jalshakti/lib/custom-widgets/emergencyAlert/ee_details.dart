@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:jal_shakti_sush/classes/Constants.dart';
+import 'package:jalshakti/classes/Constants.dart';
 
 //Emergency Class
 class EEContent extends StatefulWidget {
@@ -139,8 +139,6 @@ class _EEContentState extends State<EEContent> {
                     padding: EdgeInsets.all(8),
                     child: Column(
                       children: <Widget>[
-                        //categoryCheckBox(1, "Seepage", seepageValue),
-                        //categoryCheckBox(2, "Erosion", erosionValue),
                         ...data.map((category) => categoryCheckBox(
                             category['id'],
                             category['title'],

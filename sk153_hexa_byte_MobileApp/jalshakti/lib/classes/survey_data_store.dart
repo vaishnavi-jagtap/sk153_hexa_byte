@@ -7,10 +7,6 @@ class SurveyDataStore {
   static String imageURL = "";
 }
 
-// To parse this JSON data, do
-//
-//     final surveyData = surveyDataFromJson(jsonString);
-
 SurveyData surveyDataFromJson(String str) =>
     SurveyData.fromJson(json.decode(str));
 
@@ -160,9 +156,3 @@ class MultipleChoice {
         " 4": the4,
       };
 }
-
-// class SliderData {
-//   var data = {};
-//   SliderData(this.data);
-//   Map toJson() => {'1': this.data};
-// }

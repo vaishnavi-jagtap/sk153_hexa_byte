@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:jal_shakti_sush/classes/Constants.dart';
+import 'package:jalshakti/classes/Constants.dart';
 
 //Advisory Class
 class EAContent extends StatefulWidget {

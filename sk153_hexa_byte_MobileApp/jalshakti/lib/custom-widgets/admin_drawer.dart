@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:jalshakti/classes/localization/localization.dart';
-
-import '../screens/survey_page.dart';
+import 'package:jalshakti/screens/admin/emergency_report_screen.dart';
+import 'package:jalshakti/screens/admin/survey_approval.dart';
+import 'package:jalshakti/screens/jal_shakti_home.dart';
+import 'package:jalshakti/screens/more_info.dart';
+import 'package:jalshakti/screens/survey_page.dart';
 
 class AdminDrawer extends StatelessWidget {
   final TextStyle drawerTextStyle = TextStyle(
@@ -50,9 +53,6 @@ class AdminDrawer extends StatelessWidget {
                           ),
                         ),
                       ),
-                      // decoration: BoxDecoration(
-                      //   color: Colors.blue,
-                      // ),
                     ),
                   ),
                 ),
@@ -72,12 +72,11 @@ class AdminDrawer extends StatelessWidget {
                         ),
                         onTap: () {
                           Navigator.of(context).pop();
-                          
+
                           Navigator.push(context, MaterialPageRoute(
                               builder: (BuildContext context) {
                             return SurveyApprovalScreen();
                           }));
-                          
                         },
                       ),
                       ListTile(
@@ -91,12 +90,11 @@ class AdminDrawer extends StatelessWidget {
                         ),
                         onTap: () {
                           Navigator.of(context).pop();
-                          
+
                           Navigator.push(context, MaterialPageRoute(
                               builder: (BuildContext context) {
                             return Surveypage("no-image");
                           }));
-                          
                         },
                       ),
                       ListTile(
@@ -110,12 +108,11 @@ class AdminDrawer extends StatelessWidget {
                         ),
                         onTap: () {
                           Navigator.of(context).pop();
-                          
+
                           Navigator.push(context, MaterialPageRoute(
                               builder: (BuildContext context) {
                             return EmergencyReport();
                           }));
-                        
                         },
                       ),
                       Divider(
@@ -132,7 +129,7 @@ class AdminDrawer extends StatelessWidget {
                         ),
                         onTap: () {
                           Navigator.of(context).pop();
-                          
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) {
@@ -155,12 +152,11 @@ class AdminDrawer extends StatelessWidget {
                           prefs.setBool('isLoggedIn', false);
 
                           Navigator.of(context).pop();
-                          
+
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
                             return JalShaktiHome();
                           }));
-                          
                         },
                       ),
                     ],

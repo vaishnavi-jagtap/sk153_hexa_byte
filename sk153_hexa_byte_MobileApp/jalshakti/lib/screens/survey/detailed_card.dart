@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:jal_shakti_sush/classes/Constants.dart';
+import 'package:jalshakti/classes/Constants.dart';
 
 //MultipleChoiceCard
 class MultipleChoiceCard extends StatefulWidget {
@@ -60,9 +60,6 @@ class _MultipleChoiceCardState extends State<MultipleChoiceCard> {
         groupValue: selectedOption,
         title: Text(option[1]),
         onChanged: (currentOption) {
-          //print("Current Option: " + currentOption);
-          //print("Card index: ");
-          //print(index);
           onAnswerChanged(index, currentOption);
           setSelectedOption(currentOption);
         },
@@ -206,10 +203,6 @@ class _ImageChoiceCardState extends State<ImageChoiceCard> {
             ? Image.network(SERVER_URL + option[1])
             : Text(option[2]),
         onChanged: (currentOption) {
-          //print("Current Option: " + currentOption);
-          //print("Card index: ");
-          //print(index);
-          //print(currentOption);
           onAnswerChanged(index, currentOption);
           setSelectedOption(currentOption);
         },
@@ -270,7 +263,7 @@ class SliderCardState extends State<SliderCard> {
                         divisions: 10,
                         activeColor: Colors.blue,
                         inactiveColor: Colors.black,
-                        label: '$value', // _value gives the value marked
+                        label: '$value',
                         onChanged: (double newValue) {
                           setState(() {
                             value = newValue.round();

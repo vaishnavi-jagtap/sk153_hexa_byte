@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jalshakti/classes/Constants.dart';
 import 'package:jalshakti/custom-widgets/emergencyAlert/ea_details.dart';
 import 'package:jalshakti/custom-widgets/emergencyAlert/ee_details.dart';
 import 'package:jalshakti/custom-widgets/emergencyAlert/ew_details.dart';
@@ -45,9 +44,6 @@ class _ReportDetailsState extends State<ReportDetails> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Emergency Report"),
-      // ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Stack(

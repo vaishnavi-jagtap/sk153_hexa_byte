@@ -14,9 +14,6 @@ class EmergencyReport extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Emergency Report"),
-      // ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Stack(
@@ -84,7 +81,6 @@ class EmergencyReport extends StatelessWidget {
   Widget _buildMainContent(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 60),
-//      width: MediaQuery.of(context).size.width * 0.9,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

@@ -1,7 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:jal_shakti_sush/screens/survey/before_detailed_question_screen.dart';
+import 'package:jalshakti/screens/survey/before_detailed_question_screen.dart';
 import 'question_answer_data.dart';
 import 'general_card.dart';
 import 'before_detailed_question_screen.dart';
@@ -61,7 +59,6 @@ class _ReceiveGeneralQuestionAnswerState
                     i,
                     onAnswerChanged,
                     generalquestionanswer[i]["question"],
-                    //generalquestionanswer[i]["imgurl"],
                     List<dynamic>.from(generalquestionanswer[i]['answers'])),
               Container(
                 child: RaisedButton(
@@ -77,7 +74,7 @@ class _ReceiveGeneralQuestionAnswerState
                                   BeforeDetailedQuestionScreen(
                                     gen: surveyData0,
                                   )),
-                        ); //send survey data to server
+                        );
                       } else {
                         final snackbar = SnackBar(
                             content: Text("Please fill all the fields"));

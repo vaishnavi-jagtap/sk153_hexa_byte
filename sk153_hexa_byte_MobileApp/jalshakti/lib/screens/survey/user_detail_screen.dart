@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:intl/intl.dart';
-import 'package:jal_shakti_sush/classes/Constants.dart';
+import 'package:jalshakti/classes/Constants.dart';
 
 import 'state_district_data.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:jal_shakti_sush/classes/survey_data_store.dart';
+import 'package:jalshakti/classes/survey_data_store.dart';
 
 //Form Screen
 class UserDetailScreen extends StatefulWidget {

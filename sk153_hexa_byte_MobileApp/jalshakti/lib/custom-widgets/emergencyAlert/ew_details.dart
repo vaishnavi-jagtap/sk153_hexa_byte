@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:jal_shakti_sush/classes/Constants.dart';
+import 'package:jalshakti/classes/Constants.dart';
 
 //Warning Class
 class EWContent extends StatefulWidget {
@@ -50,10 +50,9 @@ class _EWContentState extends State<EWContent> {
   getFilteredData() {
     var filteredData = [];
     for (var item in data) {
-      //print("\n$item\n");
       if (item['boolValue']) filteredData.add(item);
     }
-    //print("Dataaaaaaaaaaa\n$filteredData\n");
+
     return filteredData;
   }
 

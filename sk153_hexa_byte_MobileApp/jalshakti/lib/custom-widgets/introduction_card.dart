@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jalshakti/classes/Constants.dart';
 
 class IntroductionCard extends StatelessWidget {
   @override

@@ -80,6 +80,8 @@ class _SurveyDetailsState extends State<SurveyDetails> {
               FlatButton(
                 onPressed: () {
                   //discard the survey data and remove it from database
+                  Navigator.pop(context);
+                  Navigator.pop(context);
                 },
                 child: Text("No"),
               ),
@@ -111,7 +113,6 @@ class _SurveyDetailsState extends State<SurveyDetails> {
   Widget build(BuildContext context) {
     //Widget to display user details
 
-    //Uncomment this line when hosted on server
     widget.url = SERVER_URL + "/" + widget.imageUrl;
 
     final surveyDetailsHeader = Container(

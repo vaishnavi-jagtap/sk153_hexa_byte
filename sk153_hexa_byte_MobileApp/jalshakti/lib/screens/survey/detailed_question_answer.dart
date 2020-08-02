@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'detailed_card.dart';
 import 'user_detail_screen.dart';
 import 'package:flutter/material.dart';
@@ -59,14 +57,6 @@ class _ReceiveDetailedQuestionAnswerState
     print(surveyData2);
   }
 
-/*
-  void storedata(){
-  // addAll() method
-  var combinedMap = {}..addAll(surveyData)..addAll(surveyData2);
-  print("combinedMap");
-  print(combinedMap);
-  }*/
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -98,7 +88,6 @@ class _ReceiveDetailedQuestionAnswerState
                   i,
                   onAnswerChanged,
                   detailedquestionanswer[i]["question"],
-                  //detailedquestionanswer[i]["imgurl"],
                   List<dynamic>.from(detailedquestionanswer[i]["answers"]),
                 )
               else if (detailedquestionanswer[i]["type"] == "slider")
@@ -112,8 +101,6 @@ class _ReceiveDetailedQuestionAnswerState
                   child: Text("Next"),
                   color: Colors.blue,
                   onPressed: () {
-                    // Map<dynamic,dynamic> combinedMap = {}..addAll(surveyData)..addAll(surveyData2);
-                    // Map<dynamic,dynamic> combinedMap2 = {}..addAll(combinedMap)..addAll(widget.gen1);
                     var questype = {};
                     var quesans = {};
 

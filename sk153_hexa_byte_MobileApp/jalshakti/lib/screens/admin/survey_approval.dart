@@ -8,12 +8,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:jalshakti/classes/localization/localization.dart';
-import 'package:jalshakti/classes/survey_approval_data.dart';
 import 'package:jalshakti/screens/admin/survey_approval_help.dart';
 import 'package:jalshakti/screens/admin/survey_details.dart';
 
 class SurveyApprovalScreen extends StatefulWidget {
-  //final surveys = PendingSurveys.surveys;
   @override
   _SurveyApprovalScreenState createState() => _SurveyApprovalScreenState();
 }

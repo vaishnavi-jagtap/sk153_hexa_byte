@@ -29,7 +29,6 @@ class _GeneralCardState extends State<GeneralCard> {
           ),
           Column(
             children: <Widget>[
-              //Image.asset(widget.imgurl),
               Column(
                 children: createRadioListOptions(
                     widget.ans, widget.onAnswerChanged, widget.index),
@@ -57,8 +56,6 @@ class _GeneralCardState extends State<GeneralCard> {
         groupValue: selectedOption,
         title: Text(option[1]),
         onChanged: (currentOption) {
-          //print("Current Option: " + currentOption);
-          //print("Card index: ");
           print(index);
           onAnswerChanged(index, currentOption);
           setSelectedOption(currentOption);
