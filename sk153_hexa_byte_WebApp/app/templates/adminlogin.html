@@ -1,0 +1,23 @@
+{% extends "Layout.html" %}
+{% block body %}
+      <div class="container" id="adminform">
+            <form action="" method="POST" nonvalidate>
+                  {{ form.hidden_tag() }}
+                  <p>
+                        {{ form.adminID.label }}<br>
+                        {{ form.adminID(size = 32) }}<br>
+                        {% for error in form.adminID.errors %}
+                              <span style = "color:red;">[{{error}}]</span>
+                        {% endfor %}
+                  </p>
+                  <p>
+                        {{ form.password.label }}<br>
+                        {{ form.password(size = 32) }}<br>
+                        {% for error in form.password.errors %}
+                              <span style = "color:red;">[{{error}}]</span>
+                        {% endfor %}
+                  </p>
+                  <p> {{form.login()}} </p>
+            </form>
+      </div>
+{% endblock body %}

@@ -1,0 +1,8 @@
+.btn {border-radius: 50px;}
+.form{
+       background-color: coral;
+       background-image: linear-gradient(180deg,#3282b8,#bbe1fa);
+       margin:20px;
+       padding:50px;
+       border-radius:30px;
+   }

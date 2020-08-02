@@ -1,26 +1,25 @@
-{% extends "base.html" %}
-{% block content %}
-<body>
-      <div class="container" id="adminform">
-            <form action="" method="POST" nonvalidate>
-                  {{ form.hidden_tag() }}
-                  <p>
-                        {{ form.adminID.label }}<br>
-                        {{ form.adminID(size = 32) }}<br>
-                        {% for error in form.adminID.errors %}
-                              <span style = "color:red;">[{{error}}]</span>
-                        {% endfor %}
-                  </p>
-                  <p>
-                        {{ form.password.label }}<br>
-                        {{ form.password(size = 32) }}<br>
-                        {% for error in form.password.errors %}
-                              <span style = "color:red;">[{{error}}]</span>
-                        {% endfor %}
-                  </p>
-                  <p> {{form.login()}} </p>
+{% extends "Layout.html" %}
+{% block body %}
+<div class="container">
+    <div class="row row-content align-items-center">
+        <div class="col-md-8 offset-md-2">
+            <form method="POST" class="form" action="{{ url_for('login') }}">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div><br><br>
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                            <br>
+              <div>
+                Don't have an account? <a href="{{ url_for('register') }}">Sign up here</a>.
+            </div>
             </form>
-      </div>
-      
-</body>
-{% endblock content %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

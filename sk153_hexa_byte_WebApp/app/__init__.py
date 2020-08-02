@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_json import FlaskJSON
 import flask_admin as admin
 from config import Config
 from app.views import db
@@ -11,6 +12,6 @@ serverApplication.config.from_object(Config)
 #creating admin and adding views
 admin = admin.Admin(serverApplication)
 UserView = creatingUserView()
-admin.add_view(UserView(db.user, 'User'))
+admin.add_view(UserView(db.authority, 'Authority'))
 
 from app import routes
