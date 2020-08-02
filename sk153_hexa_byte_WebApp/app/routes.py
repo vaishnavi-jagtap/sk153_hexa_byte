@@ -69,3 +69,9 @@ def register():
         flash(f'Username already exist for {form.username.data}!', 'danger')
     return render_template('register.html',form=form,title='register')
 #------------------------------------------------------------------------------------------------------
+
+#JAID{
+@serverApplication.route('/webmap')
+def Webmap():
+    return render_template('webmap.html')
+# JAID}
