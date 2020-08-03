@@ -58,6 +58,7 @@ require([
         AreaMeasurement2D,
         watchUtils,
         dojoQuery){
+          
         esriConfig.portalUrl = "https://mjzaid921pccoer.maps.arcgis.com";
 //PART01:
     let RiverTracingWebMapId = "bee4f67960a040c79aad67e1810b70d4";
@@ -259,7 +260,7 @@ require([
               }
             }
           };
-          map.layers.add(csvLayer);//
+          map.layers.push(csvLayer);//
 
 
 
