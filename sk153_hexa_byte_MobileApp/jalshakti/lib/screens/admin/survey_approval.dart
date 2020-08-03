@@ -74,6 +74,7 @@ class _SurveyApprovalScreenState extends State<SurveyApprovalScreen> {
         appBar: AppBar(
           title: Text("Approval"),
           actions: <Widget>[
+            /*
             IconButton(
                 icon: Icon(Icons.help_outline),
                 onPressed: () {
@@ -81,6 +82,7 @@ class _SurveyApprovalScreenState extends State<SurveyApprovalScreen> {
                     return ApprovalHelp();
                   }));
                 }),
+                */
           ],
         ),
         body: RefreshIndicator(

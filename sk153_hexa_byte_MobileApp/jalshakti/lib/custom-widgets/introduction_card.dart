@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jalshakti/classes/localization/localization.dart';
 
 class IntroductionCard extends StatelessWidget {
   @override
@@ -15,8 +16,7 @@ class IntroductionCard extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Text(
-              'What is this about?\n We intend to collect data regarding river embankments.\nSome more content here.\nThen convince the users to use this app'),
+          child: Text(AppLocalizations.of(context).introduction),
         ),
       ),
     );

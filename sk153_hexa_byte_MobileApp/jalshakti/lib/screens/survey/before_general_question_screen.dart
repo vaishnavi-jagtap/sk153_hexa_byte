@@ -1,3 +1,5 @@
+import 'package:jalshakti/classes/localization/localization.dart';
+
 import 'general_question_answer.dart';
 import 'package:flutter/material.dart';
 
@@ -12,15 +14,14 @@ class BeforeGeneralQuestionScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               ListTile(
-                title: Text(
-                    "Let us first understand some general information about river embankments. River embankments are water retaining structures that safeguard river surroundings."),
+                title: Text(AppLocalizations.of(context).beforeGeneralInfo),
                 subtitle:
                     Text("Please click on the button below to continue..."),
               ),
               ButtonBar(
                 children: <Widget>[
                   RaisedButton(
-                    child: Text("Continue"),
+                    child: Text(AppLocalizations.of(context).step3continue),
                     color: Colors.blue,
                     onPressed: () {
                       Navigator.push(

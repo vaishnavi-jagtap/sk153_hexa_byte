@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:jalshakti/classes/localization/localization.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
@@ -127,8 +128,8 @@ class _SurveypageState extends State<Surveypage>
           _location["latitude"] = loc.getLatitude();
           _location["longitude"] = loc.getLongitude();
           print("Location : $_location");
-          //SurveyDataStore.latitude = loc.getLatitude();
-          //SurveyDataStore.longitude = loc.getLongitude();
+          SurveyDataStore.latitude = loc.getLatitude();
+          SurveyDataStore.longitude = loc.getLongitude();
           _currentAddress = address;
           _locationFetched = true;
           print("Address:$_currentAddress");
@@ -202,7 +203,7 @@ class _SurveypageState extends State<Surveypage>
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Jal Shakti",
+                  AppLocalizations.of(context).appName,
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
@@ -323,7 +324,7 @@ class _SurveypageState extends State<Surveypage>
             child: Wrap(
               children: <Widget>[
                 Text(
-                  "Before taking the survey, it is necessary that you actually visit a nearby river embankment and then answer all the questions.\nThe first step of the survey insists on clicking an image of the embankment.\nIt is necessary to have it as a proof.",
+                  AppLocalizations.of(context).step1info,
                   style: TextStyle(color: myBlack),
                 ),
               ],
@@ -371,7 +372,7 @@ class _SurveypageState extends State<Surveypage>
                           Padding(
                             padding: EdgeInsets.all(5),
                             child: Text(
-                              "Captured Photo",
+                              AppLocalizations.of(context).step1capturedPhoto,
                               style: TextStyle(color: myBlack),
                             ),
                           ),
@@ -404,7 +405,7 @@ class _SurveypageState extends State<Surveypage>
           alignment: Alignment.bottomRight,
           child: RaisedButton(
               child: Text(
-                'Click Picture',
+                AppLocalizations.of(context).step1clickpicture,
                 style: TextStyle(color: Colors.white),
               ),
               color: myBlue,
@@ -468,7 +469,7 @@ class _SurveypageState extends State<Surveypage>
                         children: <Widget>[
                           Icon(Icons.location_on, color: Colors.redAccent),
                           Text(
-                            "Location",
+                            AppLocalizations.of(context).step2location,
                             style: TextStyle(color: myBlack),
                           ),
                         ],
@@ -552,7 +553,7 @@ class _SurveypageState extends State<Surveypage>
                 Expanded(
                   flex: 5,
                   child: Text(
-                    "Continue to the survey...",
+                    AppLocalizations.of(context).step3continuesurvey,
                     style: TextStyle(color: myBlack),
                   ),
                 ),
@@ -562,7 +563,7 @@ class _SurveypageState extends State<Surveypage>
                     alignment: Alignment.bottomRight,
                     child: RaisedButton(
                         child: Text(
-                          'Continue',
+                          AppLocalizations.of(context).step3continue,
                           style: TextStyle(color: Colors.white),
                         ),
                         color: myBlue,

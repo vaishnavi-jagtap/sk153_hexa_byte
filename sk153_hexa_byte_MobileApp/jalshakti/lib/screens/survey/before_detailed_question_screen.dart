@@ -1,3 +1,5 @@
+import 'package:jalshakti/classes/localization/localization.dart';
+
 import 'detailed_question_answer.dart';
 import 'package:flutter/material.dart';
 
@@ -16,15 +18,14 @@ class BeforeDetailedQuestionScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               ListTile(
-                title: Text(
-                    "Now let us have a detailed survey. Please observe every minute detail of the embankment you are near to. Taking into consideration all the knowledge that you have regarding embankments, please provide genuine answers to following questions."),
+                title: Text(AppLocalizations.of(context).beforeDetailedInfo),
                 subtitle:
                     Text("Please click on the button below to continue..."),
               ),
               ButtonBar(
                 children: <Widget>[
                   RaisedButton(
-                    child: Text("Continue"),
+                    child: Text(AppLocalizations.of(context).next),
                     color: Colors.blue,
                     onPressed: () {
                       print(

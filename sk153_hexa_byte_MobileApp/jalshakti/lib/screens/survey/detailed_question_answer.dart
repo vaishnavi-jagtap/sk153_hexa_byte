@@ -1,3 +1,5 @@
+import 'package:jalshakti/classes/localization/localization.dart';
+
 import 'detailed_card.dart';
 import 'user_detail_screen.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +100,7 @@ class _ReceiveDetailedQuestionAnswerState
                 ),
             Container(
               child: RaisedButton(
-                  child: Text("Next"),
+                  child: Text(AppLocalizations.of(context).next),
                   color: Colors.blue,
                   onPressed: () {
                     var questype = {};

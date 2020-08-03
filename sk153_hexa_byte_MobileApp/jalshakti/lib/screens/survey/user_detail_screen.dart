@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:intl/intl.dart';
 import 'package:jalshakti/classes/Constants.dart';
+import 'package:jalshakti/classes/localization/localization.dart';
 
 import 'state_district_data.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,8 @@ class UserDetailScreenState extends State<UserDetailScreen> {
 
   Widget _buildName() {
     return TextFormField(
-      decoration: InputDecoration(labelText: 'Name'),
+      decoration:
+          InputDecoration(labelText: AppLocalizations.of(context).userName),
       //keyboardType: TextInputType.text,
       validator: (String value) {
         if (value.isEmpty) {
@@ -164,7 +166,7 @@ class UserDetailScreenState extends State<UserDetailScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                "Now a few last steps to help us understand and categorize the survey data. Please fill in the details below",
+                AppLocalizations.of(context).userDetailInfo,
                 style: TextStyle(fontSize: 16),
               ),
               Form(
@@ -213,25 +215,16 @@ class UserDetailScreenState extends State<UserDetailScreen> {
                           "survey-status": "Pending",
                           "survey-data": widget.gen2
                         };
-                        // print(
-                        //     "User Data .................................................");
-                        // print(userdata);
-
-                        // print(
-                        //     "Question answer data.................................");
-                        // print(widget.gen2);
-                        // Map storeddata = {
-                        //   "userdata": userdata,
-                        //   "question_answer": widget.gen2
-                        // };
                         print(
                             "Send the data to server................................................");
                         try {
-                          //SurveyData d = SurveyData.fromJson(dataToSend);
-                          //print("\nSurvey Data...\n$d\n");
-                          //print(surveyDataToJson(d));
-
                           sendSurveyDataToServer(dataToSend);
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                          Navigator.pop(context);
+                          Navigator.pop(context);
                         } on Exception catch (e) {
                           print("Exception:::::---$e");
                         } on Error catch (e) {

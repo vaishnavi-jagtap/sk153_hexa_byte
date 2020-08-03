@@ -77,14 +77,14 @@ class _SurveyDetailsState extends State<SurveyDetails> {
             content:
                 Text("This data will be stored into database as valid data"),
             actions: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  //discard the survey data and remove it from database
-                  Navigator.pop(context);
-                  Navigator.pop(context);
-                },
-                child: Text("No"),
-              ),
+              // FlatButton(
+              //   onPressed: () {
+              //     //discard the survey data and remove it from database
+              //     Navigator.pop(context);
+              //     Navigator.pop(context);
+              //   },
+              //   child: Text("No"),
+              // ),
               isApproving
                   ? CircularProgressIndicator()
                   : FlatButton(

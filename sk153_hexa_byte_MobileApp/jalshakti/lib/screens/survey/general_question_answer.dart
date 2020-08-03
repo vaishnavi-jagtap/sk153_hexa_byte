@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jalshakti/classes/localization/localization.dart';
 import 'package:jalshakti/screens/survey/before_detailed_question_screen.dart';
 import 'question_answer_data.dart';
 import 'general_card.dart';
@@ -62,7 +63,7 @@ class _ReceiveGeneralQuestionAnswerState
                     List<dynamic>.from(generalquestionanswer[i]['answers'])),
               Container(
                 child: RaisedButton(
-                    child: Text("Next"),
+                    child: Text(AppLocalizations.of(context).next),
                     color: Colors.blue,
                     onPressed: () {
                       if (_check >= generalquestionanswer.length) {

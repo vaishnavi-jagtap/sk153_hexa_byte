@@ -7,9 +7,8 @@ import 'package:permission_handler/permission_handler.dart';
 
 import 'package:jalshakti/classes/localization/localization.dart';
 import 'package:jalshakti/main.dart';
-//import 'package:jalshakti/classes/Model/radio_model.dart';
 import 'package:jalshakti/custom-widgets/admin_drawer.dart';
-//import 'package:jalshakti/screens/more_info.dart';
+import 'package:jalshakti/screens/more_info.dart';
 import '../custom-widgets/introduction_card.dart';
 import './survey_page.dart';
 
@@ -130,11 +129,9 @@ class _JalShaktiHomeState extends State<JalShaktiHome> {
                 color: Colors.white,
               ),
               onPressed: () {
-                /*
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return MoreInfo();
                 }));
-                */
               },
             ),
           ),
