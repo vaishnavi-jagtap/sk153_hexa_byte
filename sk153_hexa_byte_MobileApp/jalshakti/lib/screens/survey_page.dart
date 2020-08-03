@@ -397,7 +397,7 @@ class _SurveypageState extends State<Surveypage>
         Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            "Please click a photo of embankment wherever there is any kind of destruction",
+            AppLocalizations.of(context).step1requestImage,
             style: TextStyle(color: myBlack),
           ),
         ),

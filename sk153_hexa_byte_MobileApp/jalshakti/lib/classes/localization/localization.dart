@@ -51,6 +51,8 @@ class AppLocalizations {
       'step1_re-take': 'Re-take',
       'step1_confirm': 'Confirm',
       'step1_captured_photo': 'Captured photo',
+      'step1_request_image':
+          "Please click a photo of embankment wherever there is any kind of destruction",
       'step2_location': 'Location',
       'step2_no_address': 'No address',
       'step3_continue_survey': 'Continue to the survey...',
@@ -113,6 +115,8 @@ class AppLocalizations {
       'step1_re-take': 'पुन: ले',
       'step1_confirm': 'पुष्टि करें',
       'step1_captured_photo': 'खींची फोटो',
+      'step1_request_image':
+          "कृपया किसी भी प्रकार के विनाश के लिए तटबंध की तस्वीर क्लिक करें",
       'step2_location': 'स्थान',
       'step2_no_address': 'स्थान अनुपलब्ध है',
       'step3_continue_survey': 'सर्वेक्षण जारी रखें ...',
@@ -229,6 +233,10 @@ class AppLocalizations {
 
   String get step1capturedPhoto {
     return _localizedValues[locale.languageCode]['step1_captured_photo'];
+  }
+
+  String get step1requestImage {
+    return _localizedValues[locale.languageCode]['step1_request_image'];
   }
 
   String get step1retake {

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:jalshakti/classes/Constants.dart';
+import 'package:jalshakti/classes/localization/localization.dart';
 import 'package:path/path.dart' show join;
 import 'package:path_provider/path_provider.dart';
 
@@ -156,7 +157,7 @@ class DisplayPictureScreen extends StatelessWidget {
                       ),
                       color: Colors.orange,
                       child: Text(
-                        'Re-take picture',
+                        AppLocalizations.of(context).step1retake,
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: () {
@@ -176,7 +177,7 @@ class DisplayPictureScreen extends StatelessWidget {
                       ),
                       color: myBlue,
                       child: Text(
-                        'Confirm',
+                        AppLocalizations.of(context).step1confirm,
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: () {
