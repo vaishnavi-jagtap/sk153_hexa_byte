@@ -1,0 +1,46 @@
+{% extends "Layout.html" %}
+{% block options %}
+<a class="nav-item nav-link" href="/webmap"> Webmap </a>
+<a class="nav-item nav-link" href="/heatmap"> Heatmap </a>
+<a class="nav-item nav-link" href="/healthcard"> Healthcard </a>
+{% endblock %}
+
+{% block body %}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+
+<div id="webmap" style="align:left">
+Instructions:
+<iframe src="/webmap" title="Webmap" width="85%" height="85%" 
+style="height:550px;width:1000px; border:1px solid black;align:right"></iframe>
+</div>
+   Zone Name: <input id ="zone"/>
+   Location: <input id ="loc"/>
+    <button type="submit" id="button_add">Add zone</button>
+<script>
+
+$("#button_add").click(function(){
+
+    $.ajax({
+        url: "/addtozone",
+        type: "GET",
+        contentType: 'application/json;charset=UTF-8',
+        data: {
+            'selected': document.getElementById('loc').value,
+            'zone':document.getElementById('zone').value
+        },
+        dataType:"json",
+        success: function (data) {
+            console.log(data);
+           }
+    });
+
+
+});
+
+</script>
+
+
+{% endblock %}

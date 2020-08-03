@@ -3,6 +3,7 @@
 <a class="nav-item nav-link" href="/heatmap"> Heatmap </a>
 <a class="nav-item nav-link" href="/healthcard"> Healthcard </a>
 <a class="nav-item nav-link" href="/scene"> Survey </a>
+<a class="nav-item nav-link" href="/addzone"> Add Zone</a>
 {% endblock %}
 {% block body %}
 <div id="viewDiv"></div>
@@ -21,6 +22,5 @@
         title="Measure area"
       ></button>
     </div>
-    <div>GET HEALTH CARD</div>
 <script src="{{url_for('static', filename='js/webmap.js')}}"></script>
 {% endblock %}

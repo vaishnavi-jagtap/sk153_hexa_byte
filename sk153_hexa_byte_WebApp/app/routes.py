@@ -145,3 +145,19 @@ def change_district():
 
 def globalValues():
     print("gvGLOBAL :"+State+" , "+District)
+
+#jaid{
+
+@serverApplication.route('/addzone')
+def addzone():
+    return render_template('addzone.html')
+
+@serverApplication.route('/addtozone' ,methods=['GET', 'POST'])
+def addtozone():
+    from Addtozone import getzone
+    Loc = request.args['selected']
+    ZoneName=request.args['zone']
+    myzone=getzone(loc=Loc,zoneName=ZoneName)
+    return jsonify(myzone)
+
+# jaid}

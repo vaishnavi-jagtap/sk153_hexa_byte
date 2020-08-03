@@ -60,16 +60,26 @@ require([
         dojoQuery){
         esriConfig.portalUrl = "https://mjzaid921pccoer.maps.arcgis.com";
 //PART01:
-            let RiverTracingWebMapId = "bee4f67960a040c79aad67e1810b70d4";
-            if (window.location.href.indexOf("?id=") > 0) {
-              RiverTracingWebMapId = window.location.href.split("?id=")[0];
-            }
-            var map = new WebMap({
-              portalItem: {
-                id: RiverTracingWebMapId
-              }
-             // basemap:"topo"
-            });
+    let RiverTracingWebMapId = "bee4f67960a040c79aad67e1810b70d4";
+    if (window.location.href.indexOf("?id=") > 0) {
+      RiverTracingWebMapId = window.location.href.split("?id=")[0];
+    }
+    let WebMap_WaterBodies_TopographicId = "23bc5f282ec848adb1ee2610d2408e51";
+    if (window.location.href.indexOf("?id=") > 0) {
+      WebMap_WaterBodies_TopographicId = window.location.href.split("?id=")[0];
+    }
+    let BASEWebMap_WaterBodies_TopographicId = "8912c1ef2dd6408090d9be41c8869558";
+    if (window.location.href.indexOf("?id=") > 0) {
+      BASEWebMap_WaterBodies_TopographicId = window.location.href.split("?id=")[0];
+    }
+
+    var map = new WebMap({
+      portalItem: {
+        id: BASEWebMap_WaterBodies_TopographicId
+      }
+      //basemap:"topo"
+    });
+
 
 
 
@@ -227,6 +237,32 @@ require([
             });
             //map.layers.add(layer,1);
             map.layers.push(layer);
+//PART08:
+          const url ="/static/surveyData.csv";
+
+          const csvLayer = new CSVLayer({
+          title: "Survey Data",
+            url: url,
+            copyright: "mjzaid921pccoer"
+          });
+
+
+          csvLayer.renderer = {
+            type: "simple",  // autocasts as new SimpleRenderer()
+            symbol: {
+              type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
+              size: 6,
+              color: "orange",
+              outline: {  // autocasts as new SimpleLineSymbol()
+                width: 0.5,
+                color: "white"
+              }
+            }
+          };
+          map.layers.add(csvLayer);//
+
+
+
 
         }
   );
