@@ -41,6 +41,40 @@ class AppLocalizations {
       'approve': 'Approve',
       'see_on_map': 'See on map',
       'image_location': 'Image Location',
+
+
+    //for survey page
+    'step1_info' : 'Before taking the survey, it is necessary that you actually visit a nearby river embankment and then answer all the questions.The first step of the survey insits on click an image of the embankment.It is necessary to have it as a proof.',
+    'step1_click_picture' : 'Click a picture',
+    'step1_re-take':'Re-take',
+    'step1_confirm' : 'Confirm',
+    'step1_captured_photo' : 'Captured photo',
+    'step2_location': 'Location',
+    'step2_no_address':'No address',
+    'step3_continue_survey' : 'Continue to the survey...',
+    'step3_continue':'Continue',
+
+
+    //for before general card
+    'before_general_info':'Let us first understand some general information about river embankments. River embankments are water retaining structures that safeguard river surroundings.',
+
+    //for detailed general card
+    'before_detailed_info':'Let us have a detailed survey. Please observe every details of the embankment you are near to. Taking into consideration all the knowledge that you have regarding embankments, please provide genuine answers to following questions.',
+
+    //for both card
+    'both_card': 'Please click on the button below to continue...',
+    'continue':'Continue',
+    'next':'Next',
+
+    //user detailed screen
+    'user_detail_info':'Now a few last steps to help us understand and categorize the survey data.Please fill in the details below.',
+    'name':'Name',
+    'state':'Choose a state',
+    'district':'Choose a district',
+    'submit':'Submit',
+
+
+
     },
     'hi': {
       //for home page
@@ -68,6 +102,40 @@ class AppLocalizations {
           'सर्वेक्षण के आंकड़ों को अनुमोदित करने से पहले, सुनिश्चित करें कि यह आपके ज्ञान के अनुसार नदी तटबंधों के लिए सही और प्रासंगिक है।',
       'deny': 'मना करे',
       'approve': 'अनुमोदित करे',
+
+
+      //for survey page
+      'step1' :'सर्वेक्षण करने से पहले, यह आवश्यक है कि आप वास्तव में एक नजदीकी नदी तटबंध पर जाएँ और फिर सभी प्रश्नों के उत्तर दें। सर्वेक्षण का पहला चरण तटबंध की एक फोटो क्लिक करें। इसे प्रमाण के रूप में रखना आवश्यक है।', 
+      'step1_click_picture' : 'फोटो क्लिक करें',      
+      'step1_re-take':'पुन: ले',
+      'step1_confirm' : 'पुष्टि करें',
+      'step1_captured_photo' : 'फोटो खींची',
+      'step2_location': 'स्थान',
+      'step2_no_address':'स्थान अनुपलब्ध है',
+      'step3_continue_survey' : 'सर्वेक्षण जारी रखें ...',
+      'step3_continue':'जारी रखें',
+
+   
+    //for before general card
+    'before_general_info':'आइए हम पहले नदी तटबंधों के बारे में कुछ सामान्य जानकारी को समझें। नदी के तटबंध पानी को बनाए रखने वाली संरचनाएं हैं जो नदी के आसपास की सुरक्षा करती हैं।',
+
+    //for detailed general card
+    'before_detailed_info':'हमें एक विस्तृत सर्वेक्षण करना है। कृपया उस तटबंध के हर विवरण का अवलोकन करें, जिसके पास आप हैं। तटबंधों के संबंध में आपके पास सभी ज्ञान को ध्यान में रखते हुए, कृपया निम्नलिखित प्रश्नों के वास्तविक उत्तर प्रदान करें।',
+
+  //for both card
+    'both_card': 'कृपया जारी रखने के लिए नीचे दिए गए बटन पर क्लिक करें ...',
+    'continue':'जारी रखें',
+    'next':'आगे',
+
+    //user detailed screen
+    'user_detail_info':'अब सर्वेक्षण डेटा को समझने और श्रेणीबद्ध करने में हमारी मदद करने के लिए कुछ अंतिम चरण हैं। कृपया नीचे दिए गए विवरण भरें।',
+    'name':'नाम',
+    'state':'एक राज्य चुनें',
+    'district':'एक जिला चुनें',
+    'submit':'प्रस्तुत',
+
+
+
     },
   };
 
@@ -142,6 +210,47 @@ class AppLocalizations {
   String get approve {
     return _localizedValues[locale.languageCode]['approve'];
   }
+
+
+
+    //for survey page
+
+    String get  step1info{
+    return _localizedValues[locale.languageCode]['step1_info'];
+  }
+      String get  step1clickpicture{
+    return _localizedValues[locale.languageCode]['step1_click_picture'];
+  }
+      String get  step1retake{
+    return _localizedValues[locale.languageCode]['step1_re-take'];
+  }
+  String get  step1confirm{
+    return _localizedValues[locale.languageCode]['step1_confirm'];
+  }
+  String get  step2location{
+    return _localizedValues[locale.languageCode]['step2_location'];
+  }
+  String get  step2noaddress{
+    return _localizedValues[locale.languageCode]['step2_no_address'];
+  }
+  String get  step3continuesurvey{
+    return _localizedValues[locale.languageCode]['step3_continue_survey'];
+  }
+    String get  step3continue{
+    return _localizedValues[locale.languageCode]['step3_continue'];
+  }
+
+
+    //for before general card
+    
+    //for detailed general card
+    
+    //for both card
+    
+    //user detailed screen
+
+
+
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
