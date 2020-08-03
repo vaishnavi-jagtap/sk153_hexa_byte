@@ -1,4 +1,7 @@
 {% extends "Layout.html" %}
+{% block options %}
+<a class="nav-item nav-link" href="{{ url_for('register') }}"> Register </a>
+{% endblock %}
 {% block body %}
 <div class="container">
     <div class="row row-content align-items-center">

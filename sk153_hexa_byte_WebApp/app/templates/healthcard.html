@@ -1,0 +1,151 @@
+
+{% extends "Layout.html" %}
+{% block options %}
+<a class="nav-item nav-link" href="/webmap"> Webmap </a>
+<a class="nav-item nav-link" href="/heatmap"> Heatmap </a>
+<a class="nav-item nav-link" href="/scene"> Survey </a>
+{% endblock %}
+{% block body %}
+
+<style>
+    	#healthcard_id {
+			display: none;
+		}
+		@media print {
+          body * {
+            visibility: hidden;
+          }
+          #healthcard_id, #healthcard_id * {
+            visibility: visible;
+          }
+          #healthcard_id {
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+ <select class="round" id="state_id" name="state" onchange="selectedState()">
+     <option value= "Select State" SELECTED>Select State</option>
+    {% for states in India %}
+    <option value= "{{states.state}}">{{states["state"]}}</option>"
+    {% endfor %}
+ </select>
+
+<p id="state_result"></p>
+
+<button id="generate">Get District</button>
+
+<div id="container"></div>
+
+<button id="district_button"><a href="/healthcard" id="district_send"> SUBMIT </a></button>
+
+<button id="healthcardButton_id">GET HEALTH CARD</button>
+
+<h4 onclick="window.print();"> Click To Save PDF </h4>
+
+<div id="healthcard_id">
+
+{% for value in healthcard:%}
+    <hr>
+    <h2 style="color:red"><b>{{value[0]}} Zone Embankment</b></h2>
+    {%for i in range(1,16):%}
+
+        <h3>{{value[i][0]}}</h3>
+        <ul>
+        {% if i<8  %}
+            {%for ans in value[i][1]: %}
+                <li><h3>{{ans}}</h3></li>
+            {% endfor %}
+        {% else %}
+            <li><h3>{{value[i][1]}}</h3></li>
+        {% endif %}
+        </ul>
+        <br>
+    {% endfor %}
+{% endfor %}
+</div>
+
+<script>
+function selectedState() {
+    var state=document.getElementById("state_id").value;
+    document.getElementById("state_result").innerText = "State: "+state;
+}
+function selectedDistrict() {
+    var district=document.getElementById("state_id").value;
+    document.getElementById("district_result").innerText = "State: "+district;
+}
+
+$('#state_id').on('change',function(){
+
+    $.ajax({
+        url: "/ds",
+        type: "GET",
+        contentType: 'application/json;charset=UTF-8',
+        data: {
+            'selected': document.getElementById('state_id').value
+
+        },
+        dataType:"json",
+        success: function (data) {
+
+            console.log(data["districts"]);
+
+            $('#generate').click(function() {
+            var values = data["districts"];
+
+            var select = $('<select>').prop('id', 'district_id')
+                            .prop('name', 'district_id');
+
+            $(values).each(function() {
+              select.append($("<option>")
+                .prop('value', this)
+                .text(this.charAt(0).toUpperCase() + this.slice(1)));
+            });
+
+            var label = $("<label>").prop('for', 'district_id')
+                           .text("Choose Districts: ");
+
+            var br = $("<hr>");
+
+            $('#container').append(label).append(select).append(br);
+          });
+        }
+    });
+
+
+});
+
+$("#district_send").click(function(){
+
+    $.ajax({
+        url: "/dd",
+        type: "GET",
+        contentType: 'application/json;charset=UTF-8',
+        data: {
+            'selected': document.getElementById('district_id').value
+
+        },
+        dataType:"json",
+        success: function (data) {
+            console.log(data);
+           }
+    });
+
+});
+
+$("#healthcardButton_id").click(function(){
+ $("#healthcard_id").show();
+ });
+
+ /*
+ document.getElementById("viewDiv").addEventListener("mousemove", function(event) {
+ document.getElementsByClassName("esri-attribution__sources esri-attribution__sources--open esri-interactive").innerHTML="TEAM HEXA_BYTE";
+ }*/
+</script>
+
+{% endblock %}

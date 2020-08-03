@@ -1,23 +1,37 @@
 {% extends "Layout.html" %}
+{% block options %}
+<a class="nav-item nav-link" href="/login"> Login </a>
+<a class="nav-item nav-link" href="/register"> Register </a>
+{% endblock %}
 {% block body %}
-      <div class="container" id="adminform">
-            <form action="" method="POST" nonvalidate>
-                  {{ form.hidden_tag() }}
-                  <p>
-                        {{ form.adminID.label }}<br>
-                        {{ form.adminID(size = 32) }}<br>
-                        {% for error in form.adminID.errors %}
-                              <span style = "color:red;">[{{error}}]</span>
-                        {% endfor %}
-                  </p>
-                  <p>
-                        {{ form.password.label }}<br>
-                        {{ form.password(size = 32) }}<br>
-                        {% for error in form.password.errors %}
-                              <span style = "color:red;">[{{error}}]</span>
-                        {% endfor %}
-                  </p>
-                  <p> {{form.login()}} </p>
-            </form>
+<section class="jumbotron text-center">
+      <div class="container-fluid" id="adminform">
+            <div class="text-center mb-4">
+                        <form action="" method="POST" class="form-signin">
+                              <div class="text-center mb-4">
+                                    <h1 class="h1 mb-3 font-weight-normal">Admin Login</h1>
+                              </div>
+                              {{ form.hidden_tag() }}
+                              <div class="form-label-group">
+                                    {{ form.adminID.label }}<br>
+                                    {{ form.adminID(size = 32) }}<br>
+                                    {% for error in form.adminID.errors %}
+                                          <span style = "color:red;">[{{error}}]</span>
+                                    {% endfor %}
+                              </div>
+                              <div class="form-label-group">
+                                    <br>
+                                    {{ form.password.label }}<br>
+                                    {{ form.password(size = 32) }}<br>
+                                    {% for error in form.password.errors %}
+                                          <span style = "color:red;">[{{error}}]</span>
+                                    {% endfor %}
+                              </div>
+                              <br>  
+                              <p> {{form.login()}} </p>
+                  </form>
+            </div>         
       </div>
+</section>
+     
 {% endblock body %}

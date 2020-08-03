@@ -1,10 +1,14 @@
 {% extends "Layout.html" %}
+{% block options %}
+<a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+<a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+<a class="nav-item nav-link" href="/adminlogin"> Admin </a>
+{% endblock %}
 {% block body %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-4">
-            <h1>Welcome to Home Page of Jal Shakti</h1>
-        </div>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1>Welcome to Home</h1>
+        <p class="lead text-muted">Welcom to Welcome Page created by HEXABYTE</p>
     </div>
-</div>
+</section>
 {% endblock %}

@@ -1,0 +1,98 @@
+{% extends "Layout.html" %}
+{% block options %}
+<a class="nav-item nav-link" href="/webmap"> Webmap </a>
+<a class="nav-item nav-link" href="/heatmap"> Heatmap </a>
+<a class="nav-item nav-link" href="/scene"> Survey </a>
+{% endblock %}
+{% block body %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+ <select class="round" id="state_id" name="state" onchange="selectedState()">
+     <option value= "Select State" SELECTED>Select State</option>
+    {% for states in India %}
+    <option value= "{{states.state}}">{{states["state"]}}</option>
+    {% endfor %}
+ </select>
+
+<p id="state_result"></p>
+
+<button id="generate">Get District</button>
+
+<div id="container"></div>
+
+<button id="district_button">Go</button>
+
+<script>
+function selectedState() {
+    var state=document.getElementById("state_id").value;
+    document.getElementById("state_result").innerText = "State: "+state;
+}
+function selectedDistrict() {
+    var district=document.getElementById("state_id").value;
+    document.getElementById("district_result").innerText = "State: "+district;
+}
+
+$('#state_id').on('change',function(){
+
+    $.ajax({
+        url: "/ds",
+        type: "GET",
+        contentType: 'application/json;charset=UTF-8',
+        data: {
+            'selected': document.getElementById('state_id').value
+
+        },
+        dataType:"json",
+        success: function (data) {
+
+            console.log(data["districts"]);
+
+            $('#generate').click(function() {
+            var values = data["districts"];
+
+            var select = $('<select>').prop('id', 'district_id')
+                            .prop('name', 'district_id');
+
+            $(values).each(function() {
+              select.append($("<option>")
+                .prop('value', this)
+                .text(this.charAt(0).toUpperCase() + this.slice(1)));
+            });
+
+            var label = $("<label>").prop('for', 'district_id')
+                           .text("Choose Districts: ");
+
+            var br = $("<hr>");
+
+            $('#container').append(label).append(select).append(br);
+          });
+        }
+    });
+
+
+});
+
+$("#district_button").click(function(){
+
+    $.ajax({
+        url: "/dd",
+        type: "GET",
+        contentType: 'application/json;charset=UTF-8',
+        data: {
+            'selected': document.getElementById('district_id').value
+
+        },
+        dataType:"json",
+        success: function (data) {
+            console.log(data);
+           }
+    });
+
+
+});
+
+
+</script>
+
+{% endblock %}
