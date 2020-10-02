@@ -2,9 +2,9 @@
 SIH2020 : Repository of Team hexa_byte                                                           
 Team Members:                                                                                                                                               
                                                                                                                                                 
-Vaishnavi Jagtap          vaishnavijgtp27@gmail.com                                                                                                                     
-Sushant Said              sushantsaid1@gmail.com                                                                                                                                    
-Ashwini Jadhav            ashwinijadhav925@gmail.com                                                                                                             
+Vaishnavi Jagtap          vaishnavijgtp27@gmail.com         https://www.linkedin.com/in/vaishnavijagtap/                                                                                                                  
+Sushant Said              sushantsaid1@gmail.com            https://www.linkedin.com/in/sushantsaid1508/                                                                                                                                  
+Ashwini Jadhav            ashwinijadhav925@gmail.com        https://www.linkedin.com/in/ashwinijadhav925/                                                                                                     
 Mohammad Jaid Mulani      mjzaid921.pccoer@gmail.com                                                                                                                  
 Sneha Karale              snehakarale21@gmail.com                                                                                                               
 Vishnu Panikar            vpp27299@gmail.com                                                                                                                              
